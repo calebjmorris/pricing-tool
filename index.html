@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viewrail FLIGHT Mono Pricing Tool</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        label { display: block; margin-top: 10px; }
+        input, select { width: 200px; }
+        #result { margin-top: 20px; font-weight: bold; }
+        .feature { margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <h1>FLIGHT Mono Pricing Tool</h1>
+    <form id="pricingForm">
+        <label>
+            **Number of Treads:**
+            <input type="number" id="treads" min="10" max="20" value="15">
+        </label>
+
+        <label>
+            **Tread Material:**
+            <select id="treadMaterial">
+                <option value="oak">Oak ($150 per tread)</option>
+                <option value="maple">Maple ($180 per tread)</option>
+                <option value="walnut">Walnut ($200 per tread)</option>
+            </select>
+        </label>
+
+        <label>
+            **Finish Option:**
+            <select id="finishOption">
+                <option value="standard">Standard Stain ($30 per tread)</option>
+                <option value="premium">Premium Stain ($50 per tread)</option>
+            </select>
+        </label>
+
+        <label>
+            **Stringer Type:**
+            <select id="stringerType">
+                <option value="standard">Standard Steel ($3,000)</option>
+                <option value="heavyDuty">Heavy-Duty Steel ($4,000)</option>
+            </select>
+        </label>
+
+        <label>
+            **Railing Option:**
+            <select id="railingOption">
+                <option value="cable">Cable Railing ($200 per foot)</option>
+                <option value="glass">Glass Railing ($500 per foot)</option>
+            </select>
+        </label>
+
+        <label>
+            **Stair Width (in feet):**
+            <input type="number" id="stairWidth" min="2" max="5" step="0.1" value="3">
+        </label>
+
+        <label>
+            **Installation Complexity:**
+            <select id="installationComplexity">
+                <option value="straight">Straight Run</option>
+                <option value="lShaped">L-Shaped (+20% labor)</option>
+                <option value="uShaped">U-Shaped (+30% labor)</option>
+            </select>
+        </label>
+
+        <label>
+            **Additional Features:**
+            <div class="feature">
+                <input type="checkbox" id="ledLighting"> LED Lighting ($1,000)
+            </div>
+            <div class="feature">
+                <input type="checkbox" id="nonSlip"> Non-Slip Tread Treatment ($500)
+            </div>
+        </label>
+
+        <button type="button" onclick="calculatePrice()">Calculate Price</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="pricing_tool.js"></script>
+</body>
+</html>
